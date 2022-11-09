@@ -13,6 +13,7 @@ To get a local copy up and running follow these simple steps:
 - Code Editor(VS Studio Code)
 - Web Browser (Google Chrome recommended)
 - Linters (Webhint, Stylint and Eslint)
+- Node.js
 
 ### How to Run
 To run the project do the following:
@@ -21,7 +22,10 @@ To run the project do the following:
 - Install Live Server Extension on VS Code
 - Open the index.html file 
 - Right click anywhre in the HTML file and select "Open With Live Server"
-- Wait for a new tab to open
+- Install Node.js
+- Run `npm install` to intall dependencies
+- Run `npm start` to spin server
+- Wait for a new tab to open with the address `localhost:8080`
 - Voila! You're project is Live. You can procceed to make changes to the files
 
 **NB**: To ensure that your code follows best practices and industry standard rules, please make use of [linters](https://github.com/microverseinc/linters-config/tree/master/html-css-js)
