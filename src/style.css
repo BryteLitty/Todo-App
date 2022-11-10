@@ -11,7 +11,7 @@ body {
 }
 
 .todo-title,
-form {
+.input-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,12 +41,14 @@ input::placeholder {
 }
 
 .list-item {
-  display: flex;
-  align-items: center;
+  width: 90%;
 }
 
-.item {
-  margin-left: 5px;
+.desc {
+  margin-left: px;
+  width: 90%;
+
+  /* background-color: rebeccapurple; */
 }
 
 .flex-item {
@@ -91,4 +93,8 @@ input::placeholder {
   transform: rotate(90deg);
   font-size: 10px;
   margin-right: 10px;
+}
+
+.hidden {
+  display: none;
 }
