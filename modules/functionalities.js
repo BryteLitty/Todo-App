@@ -58,7 +58,9 @@ const removeItem = () => {
         const btnID = e.target.parentNode.id - 1;
 
         items.splice(items[btnID], 1);
-
+        items.forEach((todo, idx) => {
+          todo.index = idx + 1;
+        });
         localStorage.setItem('TodoList', JSON.stringify(items));
         loadItems();
       });
