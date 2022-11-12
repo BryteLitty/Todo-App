@@ -6,15 +6,16 @@ const newItem = document.querySelector('.form-data');
 const items = JSON.parse(localStorage.getItem('TodoList')) || [];
 
 // function to load items dynamically
+// eslint-disable-next-line no-use-before-define
 const loadItems = () => {
   todoItems.innerHTML = ' ';
   items.forEach((item) => {
     const content = `
         <li class="flex-item" id="${item.index}">
-            <div class="list-item" id="edit-list">
+            <form class="list-item" id="edit-list">
                 <input type="checkbox" class="checkbox">
                 <input type="text" class="desc" value="${item.description}">
-            </div>
+            </form>
             <i class="fa-solid fa-ellipsis-vertical" id="drag"></i>
             <i class="fa-regular fa-trash-can hidden" id="delete"></i>
         </li>        
@@ -42,6 +43,7 @@ const addTodo = () => {
     items.push(newTodo);
     localStorage.setItem('TodoList', JSON.stringify(items));
     form.reset();
+    // eslint-disable-next-line no-use-before-define
     loadItems();
   });
 };
@@ -73,7 +75,7 @@ const updateItem = () => {
   const editList = document.querySelectorAll('#edit-list');
 
   editList.forEach((item, index) => {
-    item.addEventListener('change', (e) => {
+    item.addEventListener('input', (e) => {
       items[index].description = e.target.value;
       localStorage.setItem('TodoList', JSON.stringify(items));
     });
