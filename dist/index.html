@@ -1,1 +1,47 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document</title><script defer="defer" src="main.js"></script></head><body><h1>Trying out Webpack</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+<body>
+    <main>
+        <div class="container">
+            <div class="todo-title">
+                <p>Today's To Do</p>
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+            
+            <form action="" class="input-form">
+                <input type="text" placeholder="Add to your list..." class="form-data" required>
+                <i class="fa-solid fa-turn-down 2x"></i>
+            </form>
+            
+            <ul class="todo-items">
+                <!-- loads dynamically -->
+                <!-- <li class="flex-item" id="${item.index}">
+                    <div class="list-item">
+                        <input type="checkbox" class="checkbox">
+                        <input type="text" class="desc" value="something">
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical" id="drag"></i>
+                    <i class="fa-regular fa-trash-can hidden" id="delete"></i>
+                </li> -->
+
+                
+                
+            </ul>
+
+            <div class="clear-box">
+            <button class="btn-clear">
+                Clear completed items
+            </button>
+        </div>
+        </div>
+        
+    </main>
+</body>
+</html>
