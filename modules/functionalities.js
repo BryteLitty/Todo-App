@@ -1,19 +1,23 @@
 // grab essentail elements from document
+import { itemCheck } from './interactivity.js';
+
 const todoItems = document.querySelector('.todo-items');
 const form = document.querySelector('.input-form');
 const newItem = document.querySelector('.form-data');
 
-const items = JSON.parse(localStorage.getItem('TodoList')) || [];
+// const items = JSON.parse(localStorage.getItem('TodoList')) || [];
+const getState = () => JSON.parse(localStorage.getItem('TodoList')) || [];
 
 // function to load items dynamically
 // eslint-disable-next-line no-use-before-define
 const loadItems = () => {
+  const items = getState();
   todoItems.innerHTML = ' ';
   items.forEach((item) => {
     const content = `
         <li class="flex-item" id="${item.index}">
             <form class="list-item" id="edit-list">
-                <input type="checkbox" class="checkbox">
+                <input type="checkbox" class="checkbox" ${item.completed && 'checked'} >
                 <input type="text" class="desc" value="${item.description}">
             </form>
             <i class="fa-solid fa-ellipsis-vertical" id="drag"></i>
@@ -31,6 +35,7 @@ const loadItems = () => {
 
 // function to add new item to do
 const addTodo = () => {
+  const items = getState();
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -45,12 +50,14 @@ const addTodo = () => {
     form.reset();
     // eslint-disable-next-line no-use-before-define
     loadItems();
+    itemCheck();
   });
 };
 
 const removeItem = () => {
   const deleteBtn = document.querySelectorAll('#delete');
   const dragBtn = document.querySelectorAll('#drag');
+  const items = getState();
 
   dragBtn.forEach((btn, index) => {
     btn.addEventListener('click', () => {
@@ -74,6 +81,7 @@ const removeItem = () => {
 const updateItem = () => {
   const editList = document.querySelectorAll('#edit-list');
 
+  const items = getState();
   editList.forEach((item, index) => {
     item.addEventListener('input', (e) => {
       items[index].description = e.target.value;
