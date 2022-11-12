@@ -46,6 +46,7 @@ input::placeholder {
 
 .desc {
   margin-left: px;
+
   /* width: 90%; */
 
   /* background-color: rebeccapurple; */
@@ -97,8 +98,4 @@ input::placeholder {
 
 .hidden {
   display: none;
-}
-
-.linethrough {
-  text-decoration: line-through;
 }
