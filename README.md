@@ -1,4 +1,4 @@
-## Awesome Books App
+## ToDo List App
 A To Do List app built with Javascript and Webpack
 
 ### Built With
